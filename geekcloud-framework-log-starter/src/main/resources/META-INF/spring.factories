@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    com.github.geekcloud.log.LogAutoConfiguration
+org.springframework.context.ApplicationContextInitializer=\
+    com.github.geekcloud.log.init.ApplicationLoggerInitializer, \
+    com.github.geekcloud.log.MyMDCAdapterInitializer
