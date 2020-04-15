@@ -67,11 +67,10 @@ public class ResultWrapper<T> implements Serializable {
      * 响应时间
      */
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private long time;
+    private long time = System.currentTimeMillis();;
 
 
     public ResultWrapper() {
-        time = System.currentTimeMillis();
     }
 
     public static ResultWrapper<Boolean> result(boolean flag) {
@@ -158,4 +157,5 @@ public class ResultWrapper<T> implements Serializable {
     public static ResultWrapper<Boolean> fail() {
         return fail(ResultCode.FAIL);
     }
+
 }

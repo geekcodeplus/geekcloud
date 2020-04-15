@@ -1,5 +1,6 @@
 package com.github.geekcloud.framework.log.init;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
@@ -17,9 +18,11 @@ import org.springframework.core.env.ConfigurableEnvironment;
 public class ApplicationLoggerInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
     @Override
     public void initialize(ConfigurableApplicationContext applicationContext) {
+
         ConfigurableEnvironment environment = applicationContext.getEnvironment();
         String logBase = environment.getProperty("logging.file.path", "/data/projects/logs");
         String appName = environment.getProperty("spring.application.name");
+
         // spring boot admin 直接加载日志
         System.setProperty("logging.file.name", String.format("%s/%s/root.log", logBase, appName));
 

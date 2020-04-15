@@ -1,0 +1,16 @@
+server:
+  port: 9900
+spring:
+  application:
+    name: geekcloud-test
+geekcloud:
+  log:
+    enabled: true
+    type: logger
+
+logging:
+  file:
+    path: /data/projects/logs
+    name: ${logging.file.path}/${spring.application.name}/root.log
+  level:
+    com.github.geekcloud: debug
