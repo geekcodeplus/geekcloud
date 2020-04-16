@@ -11,28 +11,10 @@
         <module>geekcloud-framework-core</module>
         <module>geekcloud-framework-log-starter</module>
         <module>geekcloud-test</module>
+        <module>geekcloud-framework-boot</module>
     </modules>
     <name>${project.artifactId}</name>
     <description>geekcloud</description>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
-        <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
-        <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
-        <!-- aop切面 -->
-        <springboot-aop.version>1.6.11</springboot-aop.version>
-        <mybatis-plus.version>3.3.1</mybatis-plus.version>
-        <swagger2.version>2.9.2</swagger2.version>
-        <knife4j.version>2.0.2</knife4j.version>
-        <fastjson.version>1.2.67</fastjson.version>
-        <jwt.version>3.10.1</jwt.version>
-        <ini4j.version>0.5.4</ini4j.version>
-        <ip2region.version>1.7.2</ip2region.version>
-        <bitwalker.version>1.21</bitwalker.version>
-        <transmittable-thread-local.version>2.11.4</transmittable-thread-local.version>
-        <hutool.version>5.2.1</hutool.version>
-    </properties>
 
     <dependencyManagement>
 

@@ -6,8 +6,7 @@ spring:
 geekcloud:
   log:
     enabled: true
-    type: logger
-
+    type: db
 logging:
   file:
     path: /data/projects/logs
