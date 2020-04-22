@@ -17,7 +17,6 @@
 package com.github.geekcloud.framework.core.response;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -75,7 +74,7 @@ public class ResultWrapper<T> implements Serializable {
 
     public static ResultWrapper<Boolean> result(boolean flag) {
         if (flag) {
-            return ok();
+            return success();
         }
         return fail();
     }
@@ -106,29 +105,29 @@ public class ResultWrapper<T> implements Serializable {
                 .build();
     }
 
-    public static ResultWrapper<Boolean> ok() {
-        return ok(null);
+    public static ResultWrapper<Boolean> success() {
+        return success(null);
     }
 
-    public static <T> ResultWrapper<T> ok(T data) {
+    public static <T> ResultWrapper<T> success(T data) {
         return result(ResultCode.SUCCESS, data);
     }
 
-    public static <T> ResultWrapper<T> ok(T data, String message) {
+    public static <T> ResultWrapper<T> success(T data, String message) {
         return result(ResultCode.SUCCESS, message, data);
     }
 
     public static ResultWrapper<Map<String, Object>> okMap(String key, Object value) {
         Map<String, Object> map = new HashMap<>(1);
         map.put(key, value);
-        return ok(map);
+        return success(map);
     }
 
-    public static ResultWrapper<Boolean> fail(ResultCode resultCode) {
+    public static <T> ResultWrapper<T> fail(ResultCode resultCode) {
         return result(resultCode, null);
     }
 
-    public static ResultWrapper<String> fail(String message) {
+    public static <T> ResultWrapper<T> fail(String message) {
         return result(ResultCode.FAIL, message, null);
 
     }

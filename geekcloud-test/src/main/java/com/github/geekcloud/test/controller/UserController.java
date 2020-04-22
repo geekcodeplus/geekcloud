@@ -18,6 +18,6 @@ public class UserController {
     @SysLog("用户信息查询.")
     public Object user() {
         //return "张三。。查询成功。。。";
-        return ResultWrapper.ok("张三。。查询成功。。。");
+        return ResultWrapper.success("张三。。查询成功。。。");
     }
 }

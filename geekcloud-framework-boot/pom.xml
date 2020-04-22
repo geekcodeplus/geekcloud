@@ -12,4 +12,10 @@
     <artifactId>geekcloud-framework-boot</artifactId>
 
 
+    <dependencies>
+        <dependency>
+            <groupId>com.github.geekcloud</groupId>
+            <artifactId>geekcloud-framework-core</artifactId>
+        </dependency>
+    </dependencies>
 </project>

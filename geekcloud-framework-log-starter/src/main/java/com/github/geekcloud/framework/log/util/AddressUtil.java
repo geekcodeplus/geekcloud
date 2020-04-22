@@ -23,6 +23,12 @@ import java.lang.reflect.Method;
 @Slf4j
 public class AddressUtil {
 
+    public static void main(String[] args) {
+        String str = "106.58.231.63";
+        String region = AddressUtil.getRegion(str);
+        System.out.println(region);
+    }
+
     private static final String JAVA_TEMP_DIR = "java.io.tmpdir";
 
     static DbConfig config = null;
