@@ -1,6 +1,5 @@
 package com.github.geekcloud.framework.log.init;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;

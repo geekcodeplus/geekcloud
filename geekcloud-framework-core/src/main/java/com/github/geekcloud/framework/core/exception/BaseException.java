@@ -27,41 +27,20 @@ import lombok.EqualsAndHashCode;
  * @modified By：
  * @version: 1.0.0
  */
-@Data
-@EqualsAndHashCode(callSuper = true)
-public abstract class BaseException extends RuntimeException {
-    private static final long serialVersionUID = -91874138L;
+public interface BaseException {
 
-    private Integer code;
-    private String message;
+    /**
+     * 返回异常信息
+     *
+     * @return
+     */
+    String getMessage();
 
-    public BaseException() {
-        super();
-    }
-
-    public BaseException(String message) {
-        super(message);
-        this.message = message;
-    }
-
-    public BaseException(Integer errorCode, String message) {
-        super(message);
-        this.code = errorCode;
-        this.message = message;
-    }
-
-    public BaseException(ResultCode resultCode) {
-        super(resultCode.getMessage());
-        this.code = resultCode.getCode();
-        this.message = resultCode.getMessage();
-    }
-
-    public BaseException(String message, Throwable cause) {
-        super(message, cause);
-    }
-
-    public BaseException(Throwable cause) {
-        super(cause);
-    }
+    /**
+     * 返回异常编码
+     *
+     * @return
+     */
+    Integer getCode();
 
 }

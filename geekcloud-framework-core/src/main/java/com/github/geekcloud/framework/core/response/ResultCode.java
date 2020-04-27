@@ -25,12 +25,16 @@ import com.github.geekcloud.framework.core.exception.FrameworkException;
  * @modified By：
  * @version: 1.0.0
  */
-public enum ResultCode {
+public enum ResultCode implements BaseResultCode {
 
     /**
      * 操作成功
      **/
     SUCCESS(200, "操作成功"),
+    /**
+     * 系统繁忙, 请稍后再试
+     */
+    SYSTEM_BUSY(-1, "系统繁忙, 请稍后再试"),
     /**
      * 非法访问
      **/
@@ -102,7 +106,19 @@ public enum ResultCode {
 
     HTTP_REQUEST_METHOD_NOT_SUPPORTED_EXCEPTION(5108, "METHOD NOT SUPPORTED"),
 
-    NO_HANDLER_FOUND_EXCEPTION(5109, "无效的请求地址");
+    NO_HANDLER_FOUND_EXCEPTION(5109, "无效的请求地址"),
+    /**
+     * 空指针异常
+     */
+    NULL_POINT_EX(5110, "空指针异常"),
+    /**
+     * 请求类型异常
+     */
+    MEDIA_TYPE_EX(5111, "请求类型异常"),
+    /**
+     * 运行SQL出现异常
+     */
+    SQL_EX(5112, "运行SQL出现异常");
 
     private final int code;
     private final String message;
@@ -118,7 +134,7 @@ public enum ResultCode {
         this.message = message;
     }
 
-    public static int getCode(String define) {
+    public static int getCode(String define) throws FrameworkException {
         try {
             return ResultCode.valueOf(define).code;
         } catch (IllegalArgumentException e) {
@@ -126,7 +142,7 @@ public enum ResultCode {
         }
     }
 
-    public static String getMessage(String define) {
+    public static String getMessage(String define) throws FrameworkException {
         try {
             return ResultCode.valueOf(define).message;
         } catch (IllegalArgumentException e) {
@@ -143,16 +159,13 @@ public enum ResultCode {
         return "errorCode not defined ";
     }
 
+    @Override
     public int getCode() {
         return code;
     }
 
+    @Override
     public String getMessage() {
         return message;
-    }
-
-    public static void main(String[] args) {
-        String str = String.format("你好 {}", "abc");
-        System.out.println(str);
     }
 }

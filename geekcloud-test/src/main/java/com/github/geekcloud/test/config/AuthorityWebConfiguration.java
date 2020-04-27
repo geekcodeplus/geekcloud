@@ -4,7 +4,6 @@ import com.github.geekcloud.framework.core.utils.SpringUtils;
 import com.github.geekcloud.framework.log.event.SysLogListener;
 import com.github.geekcloud.test.service.OptLogService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

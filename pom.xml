@@ -12,6 +12,8 @@
         <module>geekcloud-framework-log-starter</module>
         <module>geekcloud-test</module>
         <module>geekcloud-framework-boot</module>
+        <module>geekcloud-framework-swagger2-starter</module>
+        <module>geekcloud-framework-xss-starter</module>
     </modules>
     <name>${project.artifactId}</name>
     <description>geekcloud</description>
