@@ -6,7 +6,6 @@ import com.fasterxml.jackson.core.JsonToken;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.github.geekcloud.framework.xss.utils.XssUtils;
-import org.apache.commons.lang3.StringEscapeUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;

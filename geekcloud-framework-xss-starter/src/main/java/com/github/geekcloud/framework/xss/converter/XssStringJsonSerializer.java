@@ -12,8 +12,10 @@ import java.io.IOException;
  * @ClassName: XssStringJsonSerializer
  * @author: jeffrey
  * @date: 2020年04月27日
- * @Description: * 基于xss的 json 序列化器
- * * 在本项目中，没有使用该类
+ * @Description:
+ *
+ * 基于xss的 json 序列化器
+ * 在本项目中，没有使用该类
  */
 @Slf4j
 public class XssStringJsonSerializer extends JsonSerializer<String> {

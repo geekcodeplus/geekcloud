@@ -14,6 +14,9 @@
         <module>geekcloud-framework-boot</module>
         <module>geekcloud-framework-swagger2-starter</module>
         <module>geekcloud-framework-xss-starter</module>
+        <module>geekcloud-framework-validator-starter</module>
+        <module>geekcloud-framework-dozer-starter</module>
+        <module>geekcloud-framework-cache-starter</module>
     </modules>
     <name>${project.artifactId}</name>
     <description>geekcloud</description>
@@ -211,6 +214,31 @@
 <!--            </dependency>-->
         </dependencies>
     </dependencyManagement>
+    <dependencies>
+        <!--Lombok-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+    </dependencies>
 
     <build>
         <pluginManagement>

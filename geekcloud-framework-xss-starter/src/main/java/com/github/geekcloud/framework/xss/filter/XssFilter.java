@@ -2,6 +2,8 @@ package com.github.geekcloud.framework.xss.filter;
 
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.StrUtil;
+import com.alibaba.fastjson.JSON;
+import com.github.geekcloud.framework.xss.wrapper.XssRequestWrapper;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.*;
