@@ -16,7 +16,7 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalTimeSerializer;
 import com.github.geekcloud.framework.core.boot.undertow.UndertowServerFactoryCustomizer;
 import com.github.geekcloud.framework.core.converter.*;
 import com.github.geekcloud.framework.core.utils.CodeGenerate;
-import com.github.geekcloud.framework.core.utils.SpringUtils;
+import com.github.geekcloud.framework.core.utils.SpringContextUtils;
 import io.undertow.Undertow;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -184,9 +184,9 @@ public abstract class BaseConfig {
      * @return
      */
     @Bean
-    public SpringUtils getSpringUtils(ApplicationContext applicationContext) {
-        SpringUtils.setApplicationContext(applicationContext);
-        return new SpringUtils();
+    public SpringContextUtils getSpringUtils(ApplicationContext applicationContext) {
+        SpringContextUtils.setApplicationContext(applicationContext);
+        return new SpringContextUtils();
     }
 
     @Bean

@@ -1,9 +1,10 @@
 package com.github.geekcloud.test.config;
 
-import com.github.geekcloud.framework.core.utils.SpringUtils;
+import com.github.geekcloud.framework.core.utils.SpringContextUtils;
 import com.github.geekcloud.framework.log.event.SysLogListener;
 import com.github.geekcloud.test.service.OptLogService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,9 +26,9 @@ public class AuthorityWebConfiguration {//extends BaseConfig {
      * @return
      */
     @Bean
-    public SpringUtils getSpringUtils(ApplicationContext applicationContext) {
-        SpringUtils.setApplicationContext(applicationContext);
-        return new SpringUtils();
+    public SpringContextUtils getSpringUtils(ApplicationContext applicationContext) {
+        SpringContextUtils.setApplicationContext(applicationContext);
+        return new SpringContextUtils();
     }
 
     /**
@@ -37,7 +38,7 @@ public class AuthorityWebConfiguration {//extends BaseConfig {
      * @return
      */
     @Bean
-    //@ConditionalOnExpression("${geekcloud.log.enabled:true} && 'DB'.equals('${geekcloud.log.type:LOGGER}')")
+    @ConditionalOnExpression("${geekcloud.log.enabled:true} && 'DB'.equals('${geekcloud.log.type:LOGGER}')")
     public SysLogListener sysLogListener(OptLogService optLogService) {
         log.info("------------AuthorityWebConfiguration---sysLogListener");
         return new SysLogListener((log) -> optLogService.save(log));

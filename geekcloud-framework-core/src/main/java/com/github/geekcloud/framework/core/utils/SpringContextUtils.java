@@ -2,6 +2,7 @@ package com.github.geekcloud.framework.core.utils;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.util.Assert;
+import org.springframework.web.context.request.RequestContextHolder;
 
 import java.util.Map;
 
@@ -13,7 +14,7 @@ import java.util.Map;
  */
 //@SuppressWarnings("squid:S1166")
 @SuppressWarnings({ "unchecked", "rawtypes" })
-public class SpringUtils {
+public class SpringContextUtils {
     private static ApplicationContext applicationContext;
     private static ApplicationContext parentApplicationContext;
 

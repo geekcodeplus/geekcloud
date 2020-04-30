@@ -10,7 +10,7 @@ import com.github.geekcloud.framework.core.annotation.SysLog;
 import com.github.geekcloud.framework.core.context.BaseContextConstants;
 import com.github.geekcloud.framework.core.context.BaseContextHandler;
 import com.github.geekcloud.framework.core.response.ResultWrapper;
-import com.github.geekcloud.framework.core.utils.SpringUtils;
+import com.github.geekcloud.framework.core.utils.SpringContextUtils;
 import com.github.geekcloud.framework.core.utils.StrPool;
 import com.github.geekcloud.framework.log.entity.OptLogDTO;
 import com.github.geekcloud.framework.log.event.SysLogEvent;
@@ -257,7 +257,7 @@ public class SysLogAspect {
     private void publishEvent(OptLogDTO sysLog) {
         sysLog.setFinishTime(LocalDateTime.now());
         sysLog.setConsumingTime(sysLog.getStartTime().until(sysLog.getFinishTime(), ChronoUnit.MILLIS));
-        SpringUtils.publishEvent(new SysLogEvent(sysLog));
+        SpringContextUtils.publishEvent(new SysLogEvent(sysLog));
         THREAD_LOCAL.remove();
     }
 
