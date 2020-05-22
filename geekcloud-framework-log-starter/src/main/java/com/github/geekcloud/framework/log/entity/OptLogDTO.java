@@ -1,5 +1,7 @@
 package com.github.geekcloud.framework.log.entity;
 
+import com.github.geekcloud.framework.core.base.enums.OptLogBizType;
+import com.github.geekcloud.framework.core.base.enums.OptLogSaveType;
 import lombok.*;
 import lombok.experimental.Accessors;
 
@@ -36,9 +38,20 @@ public class OptLogDTO {
 
     /**
      * 日志类型
-     * #LogType{OPT:操作类型;EX:异常类型}
      */
     private String type;
+
+    /**
+     * 日志业务类型
+     * @see OptLogBizType
+     */
+    private String bizType;
+
+    /**
+     * 日志操作类型
+     * @see OptLogSaveType
+     */
+    private OptLogSaveType saveType;
 
     /**
      * 操作人

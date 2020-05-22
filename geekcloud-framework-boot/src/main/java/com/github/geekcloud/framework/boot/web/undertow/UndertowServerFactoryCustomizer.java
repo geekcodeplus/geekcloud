@@ -1,4 +1,4 @@
-package com.github.geekcloud.framework.core.boot.undertow;
+package com.github.geekcloud.framework.boot.web.undertow;
 
 import io.undertow.connector.ByteBufferPool;
 import io.undertow.server.DefaultByteBufferPool;

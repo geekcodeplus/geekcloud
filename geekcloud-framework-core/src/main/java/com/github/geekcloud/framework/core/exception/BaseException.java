@@ -16,10 +16,6 @@
 
 package com.github.geekcloud.framework.core.exception;
 
-import com.github.geekcloud.framework.core.response.ResultCode;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
 /**
  * @author： jeffrey
  * @date： 2020/3/31

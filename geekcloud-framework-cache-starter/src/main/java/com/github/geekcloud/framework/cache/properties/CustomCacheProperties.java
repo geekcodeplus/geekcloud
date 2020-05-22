@@ -14,7 +14,7 @@ import java.util.Map;
  * @Description: 主要用来设置通过 @Cacheable 注解标注的方法的缓存策略
  */
 @Data
-@ConfigurationProperties(prefix = "zuihou.cache")
+@ConfigurationProperties(prefix = "geekcloud.cache")
 public class CustomCacheProperties {
 
     /**

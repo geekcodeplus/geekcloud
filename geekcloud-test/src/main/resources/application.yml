@@ -3,6 +3,9 @@ server:
 spring:
   application:
     name: geekcloud-test
+  cache:
+    type: redis
+
 geekcloud:
   log:
     enabled: true

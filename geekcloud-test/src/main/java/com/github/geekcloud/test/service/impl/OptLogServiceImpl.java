@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 public class OptLogServiceImpl implements OptLogService {
     @Override
     public boolean save(OptLogDTO entity) {
-        log.info("OptLogServiceImpl 保存成功！！");
+        log.info("OptLogServiceImpl 保存成功！！" + entity.toString());
         return true;
     }
 }

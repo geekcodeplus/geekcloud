@@ -1,9 +1,10 @@
-package com.github.geekcloud.framework.core.utils;
+package com.github.geekcloud.framework.boot.web.utils;
 
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.Objects;
 
 /**
@@ -15,5 +16,10 @@ import java.util.Objects;
 public class WebUtils {
     public static HttpServletRequest request() {
         return ((ServletRequestAttributes) Objects.requireNonNull(RequestContextHolder.getRequestAttributes())).getRequest();
+    }
+
+    public static HttpSession getSession() {
+        HttpSession session = request().getSession();
+        return session;
     }
 }

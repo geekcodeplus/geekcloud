@@ -62,13 +62,13 @@ public class SysLogAspect {
      * 定义controller切入点拦截规则：拦截标记SysLog注解和指定包下的方法
      * 2个表达式加起来才能拦截所有Controller 或者继承了BaseController的方法
      *
-     * execution(public * com.github.zuihou.base.controller.*.*(..)) 解释：
+     * execution(public * com.github.geekcloud.framework.core.base.controller.*.*(..)) 解释：
      * 第一个* 任意返回类型
-     * 第二个* com.github.zuihou.base.controller包下的所有类
+     * 第二个* com.github.geekcloud.framework.core.base.controller包下的所有类
      * 第三个* 类下的所有方法
      * ()中间的.. 任意参数
      *
-     * \@annotation(com.github.zuihou.log.annotation.SysLog) 解释：
+     * \@annotation(com.github.geekcloud.framework.core.annotation.SysLog) 解释：
      * 标记了@SysLog 注解的方法
      */
     @Pointcut("execution(public * com.github.geekcloud.framework.core.base.controller.*.*(..)) || @annotation(com.github.geekcloud.framework.core.annotation.SysLog)")
@@ -93,7 +93,7 @@ public class SysLogAspect {
             ResultWrapper resultWrapper = Convert.convert(ResultWrapper.class, ret);
             OptLogDTO sysLog = get();
             if (resultWrapper == null) {
-                sysLog.setType("OPT");
+                sysLog.setBizType("OPT");
                 if (sysLogAnno.response()) {
                     sysLog.setResult(getText(String.valueOf(ret == null ? StrPool.EMPTY : ret)));
                 }
@@ -158,6 +158,8 @@ public class SysLogAspect {
 
             // 开始时间
             OptLogDTO sysLog = get();
+            sysLog.setBizType(sysLogAnno.biztype().getDesc());
+            sysLog.setSaveType(sysLogAnno.savetype());
             sysLog.setCreateUser(BaseContextHandler.getUserId());
             sysLog.setUserName(BaseContextHandler.getName());
             String controllerDescription = "";

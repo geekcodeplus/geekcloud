@@ -1,5 +1,9 @@
 package com.github.geekcloud.framework.core.annotation;
 
+import com.github.geekcloud.framework.core.base.enums.OptLogBizType;
+import com.github.geekcloud.framework.core.base.enums.OptLogSaveType;
+import org.springframework.core.annotation.AliasFor;
+
 import java.lang.annotation.*;
 
 /**
@@ -12,19 +16,29 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface SysLog {
+
+
+    /**
+     * 日志名称 & 模块名称
+     *
+     * @return
+     */
+    String name() default "";
+
+    /**
+     * 日志名称 & 模块名称
+     *
+     * @return
+     */
+    @AliasFor("name")
+    String value() default "";
+
     /**
      * 是否启用 操作日志
      *
      * @return
      */
     boolean enabled() default true;
-
-    /**
-     * 描述
-     *
-     * @return {String}
-     */
-    String value() default "";
 
     /**
      * 记录执行参数
@@ -46,4 +60,18 @@ public @interface SysLog {
      * @return
      */
     boolean response() default true;
+
+    /**
+     * 日志类型
+     * @return enum
+     */
+    OptLogSaveType savetype() default OptLogSaveType.LOGGER;
+
+    /**
+     * 日志类型
+     *
+     * @return
+     */
+    OptLogBizType biztype() default OptLogBizType.OTHER;
+
 }

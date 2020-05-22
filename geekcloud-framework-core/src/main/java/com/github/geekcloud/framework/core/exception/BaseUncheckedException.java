@@ -1,7 +1,6 @@
 package com.github.geekcloud.framework.core.exception;
 
 import com.github.geekcloud.framework.core.response.ResultCode;
-import lombok.Data;
 
 
 /**

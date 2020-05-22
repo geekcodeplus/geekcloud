@@ -1,7 +1,6 @@
 package com.github.geekcloud.framework.log.event;
 
 
-import cn.hutool.core.util.StrUtil;
 import com.github.geekcloud.framework.core.context.BaseContextHandler;
 import com.github.geekcloud.framework.log.entity.OptLogDTO;
 import lombok.AllArgsConstructor;

@@ -17,9 +17,17 @@
         <module>geekcloud-framework-validator-starter</module>
         <module>geekcloud-framework-dozer-starter</module>
         <module>geekcloud-framework-cache-starter</module>
+        <module>geekcloud-gateway-admin</module>
+        <module>geekcloud-gateway-web</module>
+        <module>geekcloud-demo-producer-jpa</module>
     </modules>
     <name>${project.artifactId}</name>
     <description>geekcloud</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+    </properties>
 
     <dependencyManagement>
 
@@ -31,6 +39,8 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+
             <!--项目内引用开始-->
             <dependency>
                 <groupId>com.github.geekcloud</groupId>
@@ -42,6 +52,24 @@
                 <artifactId>geekcloud-framework-log-starter</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.github.geekcloud</groupId>
+                <artifactId>geekcloud-framework-cache-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.geekcloud</groupId>
+                <artifactId>geekcloud-framework-boot</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!--自定义开始-->
+            <dependency>
+                <groupId>com.alicp.jetcache</groupId>
+                <artifactId>jetcache-starter-redis</artifactId>
+                <version>2.5.14</version>
+            </dependency>
+            <!--自定义结束-->
 
             <!--项目内引用结束-->
 <!--            <dependency>-->

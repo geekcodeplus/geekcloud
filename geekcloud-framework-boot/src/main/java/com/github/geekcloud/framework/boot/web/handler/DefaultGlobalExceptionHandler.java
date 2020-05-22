@@ -1,4 +1,4 @@
-package com.github.geekcloud.framework.core.boot.handler;
+package com.github.geekcloud.framework.boot.web.handler;
 
 import cn.hutool.core.util.StrUtil;
 import com.github.geekcloud.framework.core.exception.BaseException;
@@ -22,8 +22,6 @@ import org.springframework.web.multipart.support.MissingServletRequestPartExcept
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
-
-import static com.github.geekcloud.framework.core.utils.StrPool.EMPTY;
 
 /**
  * @ClassName: DefaultGlobalExceptionHandler

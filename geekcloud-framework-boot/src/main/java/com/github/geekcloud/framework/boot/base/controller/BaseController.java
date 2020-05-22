@@ -14,29 +14,15 @@
  *  limitations under the License.
  */
 
-package com.github.geekcloud.framework.core.utils;
-
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+package com.github.geekcloud.framework.boot.base.controller;
 
 /**
  * @author： jeffrey
  * @date： 2020/3/31
- * @description： 获取当前请求的HttpServletRequest对象
+ * @description： Controller父类
  * @modified By：
  * @version: 1.0.0
  */
-public class HttpServletRequestUtil {
+public abstract class BaseController {
 
-    public static HttpServletRequest getRequest() {
-        return ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
-    }
-
-    public static HttpSession getSession() {
-        HttpSession session = getRequest().getSession();
-        return session;
-    }
 }

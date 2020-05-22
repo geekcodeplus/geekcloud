@@ -25,6 +25,7 @@ public class OptLogProperties {
 
     /**
      * 日志存储类型
-     */
+     *
     private OptLogType type = OptLogType.DB;
+     */
 }

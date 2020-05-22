@@ -1,4 +1,4 @@
-package com.github.geekcloud.framework.core.boot.config;
+package com.github.geekcloud.framework.boot.web.config;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.json.JsonReadFeature;
@@ -13,7 +13,7 @@ import com.fasterxml.jackson.datatype.jsr310.deser.LocalTimeDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalTimeSerializer;
-import com.github.geekcloud.framework.core.boot.undertow.UndertowServerFactoryCustomizer;
+import com.github.geekcloud.framework.boot.web.undertow.UndertowServerFactoryCustomizer;
 import com.github.geekcloud.framework.core.converter.*;
 import com.github.geekcloud.framework.core.utils.CodeGenerate;
 import com.github.geekcloud.framework.core.utils.SpringContextUtils;
