@@ -1,42 +1,40 @@
-/*
- *  Copyright 2019-2029 geekboot
- *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
- */
-
 package com.github.geekcloud.framework.core.exception;
 
+import com.github.geekcloud.framework.core.base.enums.BaseEnum;
+import com.github.geekcloud.framework.core.response.ResultCode;
+import lombok.Getter;
+
 /**
- * @author： jeffrey
- * @date： 2020/3/31
- * @description： 自定义异常
- * @modified By：
- * @version: 1.0.0
+ * @ClassName: BaseException
+ * @author: jeffrey
+ * @date: 2020年06月02日
+ * @Description: TODO
  */
-public interface BaseException {
+@Getter
+public class BaseException extends RuntimeException {
+    /**
+     * 异常对应的错误类型
+     */
+    private final BaseEnum exceptionType;
 
     /**
-     * 返回异常信息
-     *
-     * @return
+     * 默认是系统异常
      */
-    String getMessage();
+    public BaseException() {
+        this.exceptionType = ResultCode.SYSTEM_EXCEPTION;
+    }
 
-    /**
-     * 返回异常编码
-     *
-     * @return
-     */
-    Integer getCode();
+    public BaseException(BaseEnum errorType) {
+        this.exceptionType = errorType;
+    }
 
+    public BaseException(BaseEnum errorType, String message) {
+        super(message);
+        this.exceptionType = errorType;
+    }
+
+    public BaseException(BaseEnum errorType, String message, Throwable cause) {
+        super(message, cause);
+        this.exceptionType = errorType;
+    }
 }

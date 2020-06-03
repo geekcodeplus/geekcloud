@@ -11,5 +11,36 @@
 
     <artifactId>geekcloud-gateway-web</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.github.geekcloud</groupId>
+            <artifactId>geekcloud-framework-boot</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.geekcloud</groupId>
+            <artifactId>geekcloud-security-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.geekcloud</groupId>
+            <artifactId>geekcloud-framework-cache-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.geekcloud</groupId>
+            <artifactId>geekcloud-framework-swagger2-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <!--消息总线-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-gateway-core</artifactId>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 </project>

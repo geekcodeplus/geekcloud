@@ -1,6 +1,6 @@
 package com.github.geekcloud.framework.core.converter;
 
-import com.github.geekcloud.framework.core.exception.BusinessException;
+import com.github.geekcloud.framework.core.exception.BusinessExceptionType;
 import com.github.geekcloud.framework.core.response.ResultCode;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.convert.converter.Converter;
@@ -55,7 +55,7 @@ public class String2DateConverter extends BaseDateConverter<Date> implements Con
             date = dateFormat.parse(dateStr);
         } catch (ParseException e) {
             log.info("转换日期失败, date={}, format={}", dateStr, format, e);
-            throw new BusinessException(ResultCode.PARAMETER_EXCEPTION.getCode(), e.getMessage());
+            throw new BusinessExceptionType(ResultCode.PARAMETER_EXCEPTION.getCode(), e.getMessage());
         }
         return date;
     }

@@ -158,7 +158,7 @@ public class SysLogAspect {
 
             // 开始时间
             OptLogDTO sysLog = get();
-            sysLog.setBizType(sysLogAnno.biztype().getDesc());
+            sysLog.setBizType(sysLogAnno.biztype().getMessage());
             sysLog.setSaveType(sysLogAnno.savetype());
             sysLog.setCreateUser(BaseContextHandler.getUserId());
             sysLog.setUserName(BaseContextHandler.getName());

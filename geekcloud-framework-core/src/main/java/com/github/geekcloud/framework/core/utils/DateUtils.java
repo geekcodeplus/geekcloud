@@ -1,6 +1,6 @@
 package com.github.geekcloud.framework.core.utils;
 
-import com.github.geekcloud.framework.core.exception.BusinessException;
+import com.github.geekcloud.framework.core.exception.BusinessExceptionType;
 import lombok.extern.slf4j.Slf4j;
 
 import java.text.ParseException;
@@ -644,7 +644,7 @@ public class DateUtils {
             dateType = MONTH;
             dateList.addAll(DateUtils.getBetweenMonth(startDate, endDate, DEFAULT_MONTH_FORMAT));
         } else {
-            throw new BusinessException("日期参数只能介于0-365天之间");
+            throw new BusinessExceptionType("日期参数只能介于0-365天之间");
         }
         return dateType;
     }
@@ -672,7 +672,7 @@ public class DateUtils {
             dateType = MONTH;
             dateList.addAll(DateUtils.getBetweenMonth(startDate, endDate, DEFAULT_MONTH_FORMAT_EN));
         } else {
-            throw new BusinessException("日期参数只能介于0-365天之间");
+            throw new BusinessExceptionType("日期参数只能介于0-365天之间");
         }
         return dateType;
     }

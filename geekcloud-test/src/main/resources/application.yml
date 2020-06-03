@@ -6,13 +6,13 @@ spring:
   cache:
     type: redis
 
-geekcloud:
-  log:
-    enabled: true
-    type: db
-logging:
-  file:
-    path: /data/projects/logs
-    name: ${logging.file.path}/${spring.application.name}/root.log
-  level:
-    com.github.geekcloud: debug
+#geekcloud:
+#  log:
+#    enabled: true
+#    type: db
+#logging:
+#  file:
+#    path: /data/projects/logs
+#    name: ${logging.file.path}/${spring.application.name}/root.log
+#  level:
+#    com.github.geekcloud: debug

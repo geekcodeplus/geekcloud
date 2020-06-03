@@ -37,7 +37,7 @@ public interface BaseEnum {
      *
      * @return
      */
-    String getDesc();
+    String getMessage();
 
     /**
      * 通过枚举类型和code值获取对应的枚举类型

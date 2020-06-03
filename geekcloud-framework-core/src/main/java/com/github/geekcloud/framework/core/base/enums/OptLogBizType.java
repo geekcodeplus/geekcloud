@@ -84,5 +84,5 @@ public enum OptLogBizType implements BaseEnum {
     EXCEL_EXPORT(12, "Excel导出");
 
     private Integer code;
-    private String desc;
+    private String message;
 }

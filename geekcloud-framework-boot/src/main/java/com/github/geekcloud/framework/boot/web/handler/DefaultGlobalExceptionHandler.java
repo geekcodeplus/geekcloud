@@ -1,8 +1,8 @@
 package com.github.geekcloud.framework.boot.web.handler;
 
 import cn.hutool.core.util.StrUtil;
-import com.github.geekcloud.framework.core.exception.BaseException;
-import com.github.geekcloud.framework.core.exception.BusinessException;
+import com.github.geekcloud.framework.core.exception.BaseExceptionType;
+import com.github.geekcloud.framework.core.exception.BusinessExceptionType;
 import com.github.geekcloud.framework.core.response.ResultCode;
 import com.github.geekcloud.framework.core.response.ResultWrapper;
 import lombok.extern.slf4j.Slf4j;
@@ -32,8 +32,8 @@ import java.util.List;
 @Slf4j
 public abstract class DefaultGlobalExceptionHandler {
 
-    @ExceptionHandler(BusinessException.class)
-    public ResultWrapper<String> businessException(BaseException ex, HttpServletRequest request) {
+    @ExceptionHandler(BusinessExceptionType.class)
+    public ResultWrapper<String> businessException(BaseExceptionType ex, HttpServletRequest request) {
         log.error("businessException:", ex);
         return ResultWrapper.fail(ex.getCode(), ex.getMessage());
     }
@@ -161,8 +161,8 @@ public abstract class DefaultGlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public ResultWrapper<String> otherExceptionHandler(Exception ex, HttpServletRequest request) {
         log.warn("Exception:", ex);
-        if (ex.getCause() instanceof BusinessException) {
-            return this.businessException((BusinessException) ex.getCause(), request);
+        if (ex.getCause() instanceof BusinessExceptionType) {
+            return this.businessException((BusinessExceptionType) ex.getCause(), request);
         }
         return ResultWrapper.fail(ResultCode.SYSTEM_BUSY.getCode(), ResultCode.SYSTEM_BUSY.getMessage());
     }

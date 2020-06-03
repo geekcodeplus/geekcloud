@@ -25,6 +25,7 @@ public class SpringContextUtils {
         Assert.notNull(ctx, "SpringUtil injection ApplicationContext is null");
         applicationContext = ctx;
         parentApplicationContext = ctx.getParent();
+
     }
 
     public static Object getBean(String name) {

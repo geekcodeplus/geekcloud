@@ -40,4 +40,10 @@ public class UserController {
         String value = cacheRepository.get("user:" + key);
         return ResultWrapper.success(value);
     }
+
+    @GetMapping("/getuser2")
+    public Object getuser2(@RequestParam(name = "key") String key) {
+        String value = cacheRepository.get("user:" + key);
+        return ResultWrapper.success(value);
+    }
 }

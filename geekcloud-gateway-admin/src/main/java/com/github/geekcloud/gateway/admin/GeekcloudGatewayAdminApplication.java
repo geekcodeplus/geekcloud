@@ -2,6 +2,7 @@ package com.github.geekcloud.gateway.admin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @ClassName: GeekcloudGatewayAdminApplication
@@ -10,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Description: TODO
  */
 @SpringBootApplication
+@EnableDiscoveryClient
 public class GeekcloudGatewayAdminApplication {
 
     public static void main(String[] args) {

@@ -30,5 +30,5 @@ public enum OptLogSaveType implements BaseEnum {
     ;
 
     private Integer code;
-    private String desc;
+    private String message;
 }

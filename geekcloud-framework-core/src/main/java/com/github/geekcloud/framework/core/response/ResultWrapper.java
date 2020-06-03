@@ -17,6 +17,7 @@
 package com.github.geekcloud.framework.core.response;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.github.geekcloud.framework.core.base.enums.BaseEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -79,17 +80,17 @@ public class ResultWrapper<T> implements Serializable {
         return fail();
     }
 
-    public static ResultWrapper<Boolean> result(ResultCode resultCode) {
+    public static ResultWrapper<Boolean> result(BaseEnum resultCode) {
         return result(resultCode, null);
     }
 
-    public static <T> ResultWrapper<T> result(ResultCode resultCode, T data) {
+    public static <T> ResultWrapper<T> result(BaseEnum resultCode, T data) {
         return result(resultCode, null, data);
     }
 
-    public static <T> ResultWrapper<T> result(ResultCode resultCode, String message, T data) {
+    public static <T> ResultWrapper<T> result(BaseEnum resultCode, String message, T data) {
         boolean success = false;
-        if (resultCode.getCode() == ResultCode.SUCCESS.getCode()) {
+        if (resultCode.getCode().equals(ResultCode.SUCCESS.getCode())) {
             success = true;
         }
         String apiMessage = resultCode.getMessage();
@@ -123,7 +124,7 @@ public class ResultWrapper<T> implements Serializable {
         return success(map);
     }
 
-    public static <T> ResultWrapper<T> fail(ResultCode resultCode) {
+    public static <T> ResultWrapper<T> fail(BaseEnum resultCode) {
         return result(resultCode, null);
     }
 
@@ -132,7 +133,7 @@ public class ResultWrapper<T> implements Serializable {
 
     }
 
-    public static <T> ResultWrapper<T> fail(ResultCode resultCode, T data) {
+    public static <T> ResultWrapper<T> fail(BaseEnum resultCode, T data) {
         if (ResultCode.SUCCESS == resultCode) {
             throw new RuntimeException("失败结果状态码不能为" + ResultCode.SUCCESS.getCode());
         }

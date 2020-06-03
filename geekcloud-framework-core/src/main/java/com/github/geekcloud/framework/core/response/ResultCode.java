@@ -16,7 +16,8 @@
 
 package com.github.geekcloud.framework.core.response;
 
-import com.github.geekcloud.framework.core.exception.FrameworkException;
+import com.github.geekcloud.framework.core.base.enums.BaseEnum;
+import com.github.geekcloud.framework.core.exception.FrameworkExceptionType;
 
 /**
  * @author： jeffrey
@@ -25,7 +26,7 @@ import com.github.geekcloud.framework.core.exception.FrameworkException;
  * @modified By：
  * @version: 1.0.0
  */
-public enum ResultCode implements BaseResultCode {
+public enum ResultCode implements BaseEnum {
 
     /**
      * 操作成功
@@ -120,7 +121,7 @@ public enum ResultCode implements BaseResultCode {
      */
     SQL_EX(5112, "运行SQL出现异常");
 
-    private final int code;
+    private final Integer code;
     private final String message;
 
     /**
@@ -129,24 +130,24 @@ public enum ResultCode implements BaseResultCode {
      * @param code
      * @param message
      */
-    ResultCode(int code, String message) {
+    ResultCode(Integer code, String message) {
         this.code = code;
         this.message = message;
     }
 
-    public static int getCode(String define) throws FrameworkException {
+    public static int getCode(String define) throws FrameworkExceptionType {
         try {
             return ResultCode.valueOf(define).code;
         } catch (IllegalArgumentException e) {
-            throw new FrameworkException(String.format("undefined error code: {}", define), e);
+            throw new FrameworkExceptionType(String.format("undefined error code: {}", define), e);
         }
     }
 
-    public static String getMessage(String define) throws FrameworkException {
+    public static String getMessage(String define) throws FrameworkExceptionType {
         try {
             return ResultCode.valueOf(define).message;
         } catch (IllegalArgumentException e) {
-            throw new FrameworkException(String.format("undefined error code: {}", define), e);
+            throw new FrameworkExceptionType(String.format("undefined error code: {}", define), e);
         }
     }
 
@@ -160,7 +161,7 @@ public enum ResultCode implements BaseResultCode {
     }
 
     @Override
-    public int getCode() {
+    public Integer getCode() {
         return code;
     }
 

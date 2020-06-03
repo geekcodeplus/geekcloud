@@ -17,4 +17,6 @@ public interface OptLogService {
      * @return
      */
     boolean save(OptLogDTO entity);
+
+    String getCache(String key);
 }
